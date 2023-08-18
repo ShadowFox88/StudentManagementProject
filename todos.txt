@@ -1,0 +1,21 @@
+Keep track of people
+Keep track of who is in
+Medical Details
+Special Accommodations
+Emergency Contacts
+Add Students
+Delete Students
+NUCLEAR OPTION
+Detentions
+Praises
+
+Objects:
+Student
+Classes
+Teachers
+Register
+
+
+
+Fess paid by students
+Teacher Salaries
