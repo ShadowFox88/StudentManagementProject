@@ -32,24 +32,6 @@ public class RegisterTest {
         return new Student(name, StudentEmergency, StudentAccommodations, JohnDoeMedical);
     }
 
-    /*
-    @Test
-    public void RegisterGetterSetterTest() {
-        HashMap<Student, Integer> Register = new HashMap<Student, Integer>();
-        Student su1 = GenerateRandomStudent("John Doe");
-        Student su2 = GenerateRandomStudent("Jane Doe");
-        Register.put(su1, 1);
-        Register.put(su2, 0);
-        assertEquals(1, Register.get(su1));
-        assertEquals(0, Register.get(su2));
-        Register.put(su1, 0);
-        Register.put(su2, 1);
-        assertEquals(0, Register.get(su1));
-        assertEquals(1, Register.get(su2));
-        assertEquals(2, Register.size());
-    }
-    */
-
     @Test
     public void RegisterAddTest() {
         Register register = new Register(new HashMap<>());
@@ -64,6 +46,8 @@ public class RegisterTest {
     public void RegisterRemoveTest() {
         Register register = new Register(new HashMap<>());
         Student john = GenerateRandomStudent("John Doe");
+        register.addStudent(john);
+        assertEquals(1, register.getRegister().size());
         register.removeStudent(john);
         assertEquals(0, register.getRegister().size());
     }

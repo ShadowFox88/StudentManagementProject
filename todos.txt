@@ -1,10 +1,10 @@
 Keep track of people
-Keep track of who is in
-Medical Details
-Special Accommodations
-Emergency Contacts
-Add Students
-Delete Students
+Keep track of who is in /
+Medical Details /
+Special Accommodations /
+Emergency Contacts /
+Add Students /
+Delete Students /
 NUCLEAR OPTION
 Detentions
 Praises
