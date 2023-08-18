@@ -1,11 +1,24 @@
 package org.studentmanagement.Student;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
 import org.junit.jupiter.api.Test;
 import java.util.ArrayList;
 
 
 class StudentTest {
+
+    @Test
+    public void PraisesTest() {
+        Praises JohnDoePraises = new Praises();
+        String praise_1_uuid = JohnDoePraises.addPraise("Good boy");
+        assertEquals(1, JohnDoePraises.praises.size());
+        assertEquals("Good boy", JohnDoePraises.praises.get(praise_1_uuid));
+        assertTrue(JohnDoePraises.praises.containsKey(praise_1_uuid));
+        JohnDoePraises.removePraise(praise_1_uuid);
+        assertEquals(0, JohnDoePraises.praises.size());
+    }
 
     @Test
     public void EmergencyContactsSetterGetterTest() {
@@ -54,12 +67,18 @@ class StudentTest {
         JohnDoeMedicalList.add("About to die");
         MedicalDetails JohnDoeMedical = new MedicalDetails(JohnDoeMedicalList);
 
-        // name, emergency contacts, special accommodations, medical details
-        Student su = new Student("John Doe", JohnDoeEmergency, JohnDoeAccommodations, JohnDoeMedical);
+        // list of praises
+        Praises JohnDoePraises = new Praises();
+        String praise_1_uuid = JohnDoePraises.addPraise("Good boy");
+
+        // name, emergency contacts, special accommodations, medical details, praises
+        Student su = new Student("John Doe", JohnDoeEmergency, JohnDoeAccommodations, JohnDoeMedical, JohnDoePraises);
 
         assertEquals("John Doe", su.studentName);
         assertEquals(JohnDoeEmergency, su.studentEmergencyContacts);
         assertEquals(JohnDoeAccommodations, su.studentSpecialAccommodations);
         assertEquals(JohnDoeMedical, su.studentMedicalDetails);
+        assertEquals(JohnDoePraises, su.studentPraises);
+        assertTrue(su.studentPraises.praises.containsKey(praise_1_uuid));
     }
 }

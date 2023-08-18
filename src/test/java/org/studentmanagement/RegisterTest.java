@@ -2,10 +2,7 @@ package org.studentmanagement;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.Test;
-import org.studentmanagement.Student.EmergencyContacts;
-import org.studentmanagement.Student.MedicalDetails;
-import org.studentmanagement.Student.SpecialAccommodations;
-import org.studentmanagement.Student.Student;
+import org.studentmanagement.Student.*;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -27,9 +24,13 @@ public class RegisterTest {
         StudentMedicalList.add("About to die");
         MedicalDetails JohnDoeMedical = new MedicalDetails(StudentMedicalList);
 
-        // name, emergency contacts, special accommodations, medical details
+        // praises
+        Praises JohnDoePraises = new Praises();
+        JohnDoePraises.addPraise("Good boy");
 
-        return new Student(name, StudentEmergency, StudentAccommodations, JohnDoeMedical);
+        // name, emergency contacts, special accommodations, medical details, praises
+
+        return new Student(name, StudentEmergency, StudentAccommodations, JohnDoeMedical, JohnDoePraises);
     }
 
     @Test
