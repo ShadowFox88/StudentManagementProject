@@ -4,12 +4,12 @@ import java.util.HashMap;
 import org.studentmanagement.Student.Student;
 
 public class Register {
-    static HashMap<Student, Integer> RegisterList = new HashMap<Student, Integer>();
+    HashMap<Student, Integer> RegisterList;
     public Register(HashMap<Student, Integer> RegisterInput) {
         RegisterList = RegisterInput;
     }
 
-    public static boolean addStudent(Student student) {
+    public boolean addStudent(Student student) {
         if (!RegisterList.containsKey(student)) {
             RegisterList.put(student, 0);
             return true;
@@ -19,7 +19,7 @@ public class Register {
 
     }
 
-    public static boolean removeStudent(Student student) {
+    public boolean removeStudent(Student student) {
         if (RegisterList.containsKey(student)) {
             RegisterList.remove(student);
             return true;
@@ -28,7 +28,7 @@ public class Register {
         }
     }
 
-    public static boolean SignInStudent(Student student) {
+    public boolean SignInStudent(Student student) {
         if (RegisterList.containsKey(student) && RegisterList.get(student) == 0) {
             RegisterList.put(student, 1);
             return true;
@@ -37,7 +37,16 @@ public class Register {
         }
     }
 
-    public static HashMap getRegister() {
+    public boolean SignOutStudent(Student student) {
+        if (RegisterList.containsKey(student) && RegisterList.get(student) == 1) {
+            RegisterList.put(student, 0);
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public HashMap<Student, Integer> getRegister() {
         return RegisterList;
     }
 }

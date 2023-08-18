@@ -18,7 +18,7 @@ class StudentTest {
 
     @Test
     public void MedicalDetailsSetterGetterTest() {
-        ArrayList JohnDoeMedicalList = new ArrayList<>();
+        ArrayList<String> JohnDoeMedicalList = new ArrayList<>();
         JohnDoeMedicalList.add("Nut Allergy");
         JohnDoeMedicalList.add("About to die");
         MedicalDetails JohnDoeMedical = new MedicalDetails(JohnDoeMedicalList);
@@ -29,7 +29,7 @@ class StudentTest {
 
     @Test
     public void SpecialAccommodationsSetterGetterTest() {
-        ArrayList JohnDoeAccommodationsList = new ArrayList<>();
+        ArrayList<String> JohnDoeAccommodationsList = new ArrayList<>();
         JohnDoeAccommodationsList.add("Extra time");
         // list of accommodations
         SpecialAccommodations JohnDoeAccommodations = new SpecialAccommodations(JohnDoeAccommodationsList);
@@ -39,17 +39,17 @@ class StudentTest {
     }
 
     @Test
-    public void StudentTest() {
+    public void CompleteStudentTest() {
         // name, number, relationship, address
         EmergencyContacts JohnDoeEmergency = new EmergencyContacts("John Doe Sr", "07866723098", "Father", "1, The Street, The Town, The City, The County, The Country, The Postcode");
 
-        ArrayList JohnDoeAccommodationsList = new ArrayList<>();
+        ArrayList<String> JohnDoeAccommodationsList = new ArrayList<>();
         JohnDoeAccommodationsList.add("Extra time");
         // list of accommodations
         SpecialAccommodations JohnDoeAccommodations = new SpecialAccommodations(JohnDoeAccommodationsList);
 
         // list of medical details
-        ArrayList JohnDoeMedicalList = new ArrayList<>();
+        ArrayList<String> JohnDoeMedicalList = new ArrayList<>();
         JohnDoeMedicalList.add("Nut Allergy");
         JohnDoeMedicalList.add("About to die");
         MedicalDetails JohnDoeMedical = new MedicalDetails(JohnDoeMedicalList);
