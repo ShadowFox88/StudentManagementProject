@@ -24,13 +24,14 @@ public class RegisterTest {
         StudentMedicalList.add("About to die");
         MedicalDetails JohnDoeMedical = new MedicalDetails(StudentMedicalList);
 
-        // praises
-        Praises JohnDoePraises = new Praises();
-        JohnDoePraises.addPraise("Good boy");
+        // behaviour
+        Behaviour JohnDoeBehaviour = new Behaviour();
+        JohnDoeBehaviour.addPraise("Good boy");
+        JohnDoeBehaviour.addBehaviourPoint("Was caught downloading free RAM");
 
         // name, emergency contacts, special accommodations, medical details, praises
 
-        return new Student(name, StudentEmergency, StudentAccommodations, JohnDoeMedical, JohnDoePraises);
+        return new Student(name, StudentEmergency, StudentAccommodations, JohnDoeMedical, JohnDoeBehaviour);
     }
 
     @Test
@@ -71,7 +72,6 @@ public class RegisterTest {
         assertEquals(0, register.getRegister().get(john));
         register.SignInStudent(john);
         assertEquals(1, register.getRegister().get(john));
-
     }
 
     @Test
@@ -84,6 +84,5 @@ public class RegisterTest {
         assertEquals(1, register.getRegister().get(john));
         register.SignOutStudent(john);
         assertEquals(0, register.getRegister().get(john));
-
     }
 }

@@ -5,14 +5,14 @@ public class Student {
     EmergencyContacts studentEmergencyContacts;
     SpecialAccommodations studentSpecialAccommodations;
     MedicalDetails studentMedicalDetails;
-    Praises studentPraises;
+    Behaviour studentBehaviour;
 
-    public Student(String name, EmergencyContacts emergencyContacts, SpecialAccommodations specialAccommodations, MedicalDetails medicalDetails, Praises praises) {
+    public Student(String name, EmergencyContacts emergencyContacts, SpecialAccommodations specialAccommodations, MedicalDetails medicalDetails, Behaviour behaviour) {
         studentName = name;
         studentEmergencyContacts = emergencyContacts;
         studentSpecialAccommodations = specialAccommodations;
         studentMedicalDetails = medicalDetails;
-        studentPraises = praises;
+        studentBehaviour = behaviour;
     }
 
 }

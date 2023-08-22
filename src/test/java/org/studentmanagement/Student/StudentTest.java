@@ -10,14 +10,21 @@ import java.util.ArrayList;
 class StudentTest {
 
     @Test
-    public void PraisesTest() {
-        Praises JohnDoePraises = new Praises();
-        String praise_1_uuid = JohnDoePraises.addPraise("Good boy");
-        assertEquals(1, JohnDoePraises.praises.size());
-        assertEquals("Good boy", JohnDoePraises.praises.get(praise_1_uuid));
-        assertTrue(JohnDoePraises.praises.containsKey(praise_1_uuid));
-        JohnDoePraises.removePraise(praise_1_uuid);
-        assertEquals(0, JohnDoePraises.praises.size());
+    public void BehaviourTest() {
+        Behaviour JohnDoeBehaviour = new Behaviour();
+        String praise_1_uuid = JohnDoeBehaviour.addPraise("Good boy");
+        assertEquals(1, JohnDoeBehaviour.praises.size());
+        assertEquals("Good boy", JohnDoeBehaviour.praises.get(praise_1_uuid));
+        assertTrue(JohnDoeBehaviour.praises.containsKey(praise_1_uuid));
+        JohnDoeBehaviour.removePraise(praise_1_uuid);
+        assertEquals(0, JohnDoeBehaviour.praises.size());
+
+        String behaviourPoint_1_uuid = JohnDoeBehaviour.addBehaviourPoint("Was caught downloading free RAM");
+        assertEquals(1, JohnDoeBehaviour.behaviourPoints.size());
+        assertEquals("Was caught downloading free RAM", JohnDoeBehaviour.behaviourPoints.get(behaviourPoint_1_uuid));
+        assertTrue(JohnDoeBehaviour.behaviourPoints.containsKey(behaviourPoint_1_uuid));
+        JohnDoeBehaviour.removeBehaviourPoint(behaviourPoint_1_uuid);
+        assertEquals(0, JohnDoeBehaviour.behaviourPoints.size());
     }
 
     @Test
@@ -68,17 +75,20 @@ class StudentTest {
         MedicalDetails JohnDoeMedical = new MedicalDetails(JohnDoeMedicalList);
 
         // list of praises
-        Praises JohnDoePraises = new Praises();
-        String praise_1_uuid = JohnDoePraises.addPraise("Good boy");
+        Behaviour JohnDoeBehaviour = new Behaviour();
+        String praise_1_uuid = JohnDoeBehaviour.addPraise("Good boy");
+        String behaviourPoint_1_uuid = JohnDoeBehaviour.addBehaviourPoint("Was caught downloading free RAM");
 
         // name, emergency contacts, special accommodations, medical details, praises
-        Student su = new Student("John Doe", JohnDoeEmergency, JohnDoeAccommodations, JohnDoeMedical, JohnDoePraises);
+        Student su = new Student("John Doe", JohnDoeEmergency, JohnDoeAccommodations, JohnDoeMedical, JohnDoeBehaviour);
 
         assertEquals("John Doe", su.studentName);
         assertEquals(JohnDoeEmergency, su.studentEmergencyContacts);
         assertEquals(JohnDoeAccommodations, su.studentSpecialAccommodations);
         assertEquals(JohnDoeMedical, su.studentMedicalDetails);
-        assertEquals(JohnDoePraises, su.studentPraises);
-        assertTrue(su.studentPraises.praises.containsKey(praise_1_uuid));
+        assertEquals(JohnDoeBehaviour.praises, su.studentBehaviour.praises);
+        assertEquals(JohnDoeBehaviour.behaviourPoints, su.studentBehaviour.behaviourPoints);
+        assertTrue(su.studentBehaviour.praises.containsKey(praise_1_uuid));
+        assertTrue(su.studentBehaviour.behaviourPoints.containsKey(behaviourPoint_1_uuid));
     }
 }
