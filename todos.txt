@@ -6,8 +6,8 @@ Emergency Contacts /
 Add Students /
 Delete Students /
 NUCLEAR OPTION
-Detentions
-Praises
+Detentions /
+Praises /
 
 Objects:
 Student
