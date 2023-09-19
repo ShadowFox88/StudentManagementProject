@@ -1,7 +1,12 @@
 package org.studentmanagement;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
 import java.util.HashMap;
 import org.studentmanagement.Student.Student;
+import java.io.*;
 
 public class Register {
     HashMap<Student, Integer> RegisterList;
@@ -49,4 +54,14 @@ public class Register {
     public HashMap<Student, Integer> getRegister() {
         return RegisterList;
     }
+
+    public void saveHashToFile(HashMap<String, Object> hash) throws IOException {
+        String filePath = "register.txt";
+        File file = new File(filePath);
+        FileOutputStream f = new FileOutputStream(file);
+        ObjectOutputStream s = new ObjectOutputStream(f);
+        s.writeObject(hash);
+        s.close();
+    }
+
 }

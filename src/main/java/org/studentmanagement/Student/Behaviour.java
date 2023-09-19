@@ -4,8 +4,8 @@ import java.util.UUID;
 import java.util.HashMap;
 
 public class Behaviour {
-    HashMap<String, String> praises = new HashMap<>();
-    HashMap<String, String> behaviourPoints = new HashMap<>();
+    public HashMap<String, String> praises = new HashMap<>();
+    public HashMap<String, String> behaviourPoints = new HashMap<>();
     public String addPraise(String reason) {
         String uuid = UUID.randomUUID().toString();
         praises.put(uuid, reason);

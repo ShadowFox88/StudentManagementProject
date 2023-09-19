@@ -1,11 +1,11 @@
 package org.studentmanagement.Student;
 
 public class Student {
-    String studentName;
-    EmergencyContacts studentEmergencyContacts;
-    SpecialAccommodations studentSpecialAccommodations;
-    MedicalDetails studentMedicalDetails;
-    Behaviour studentBehaviour;
+    public String studentName;
+    public EmergencyContacts studentEmergencyContacts;
+    public SpecialAccommodations studentSpecialAccommodations;
+    public MedicalDetails studentMedicalDetails;
+    public Behaviour studentBehaviour;
 
     public Student(String name, EmergencyContacts emergencyContacts, SpecialAccommodations specialAccommodations, MedicalDetails medicalDetails, Behaviour behaviour) {
         studentName = name;
